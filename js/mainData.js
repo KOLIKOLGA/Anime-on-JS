@@ -109,8 +109,8 @@ const mainData = () => {
         ganres.add(item.ganre);
       });
 
-      renderTopAnime(data.sort((a, b) => b.views - a.views).slice(0, 5));
-      renderAnimeList(data, ganres);
+      renderTopAnime(data.anime.sort((a, b) => b.views - a.views).slice(0, 5));
+      renderAnimeList(data.anime, ganres);
       renderGanreList(ganres);
     });
 };
