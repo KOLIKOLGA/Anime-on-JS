@@ -100,7 +100,9 @@ const mainData = () => {
     });
   };
 
-  fetch("./db.json")
+  fetch(
+    "https://my-new-test-html-academy-default-rtdb.firebaseio.com/anime.json"
+  )
     .then((response) => response.json())
     .then((data) => {
       const ganres = new Set();
@@ -109,8 +111,8 @@ const mainData = () => {
         ganres.add(item.ganre);
       });
 
-      renderTopAnime(data.anime.sort((a, b) => b.views - a.views).slice(0, 5));
-      renderAnimeList(data.anime, ganres);
+      renderTopAnime(data.sort((a, b) => b.views - a.views).slice(0, 5));
+      renderAnimeList(data, ganres);
       renderGanreList(ganres);
     });
 };

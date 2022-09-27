@@ -100,7 +100,9 @@ const categoriesData = () => {
     });
   };
 
-  fetch("./db.json")
+  fetch(
+    "https://my-new-test-html-academy-default-rtdb.firebaseio.com/anime.json"
+  )
     .then((response) => response.json())
     .then((data) => {
       const ganres = new Set();
