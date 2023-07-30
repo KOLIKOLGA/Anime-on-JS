@@ -14,7 +14,7 @@ const modal = () => {
       wrapper.insertAdjacentHTML(
         "afterbegin",
         `
-      <a class="p-2" href="">${item.title}</a>
+      <a class="p-2" href="./anime-details.html">${item.title}</a>
       `
       );
     });
