@@ -100,9 +100,7 @@ const mainData = () => {
     });
   };
 
-  fetch(
-    "https://my-new-test-html-academy-default-rtdb.firebaseio.com/anime.json"
-  )
+  fetch("https://my-new-project-anime-default-rtdb.firebaseio.com/anime.json")
     .then((response) => response.json())
     .then((data) => {
       const ganres = new Set();
