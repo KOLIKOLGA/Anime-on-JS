@@ -8,6 +8,21 @@ const modal = () => {
   wrapper.style.width = "100%";
   wrapper.style.maxWidth = "500px";
 
+  const debounce = (func, ms = 1000) => {
+    console.log("parapapa");
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, ms);
+    };
+  };
+
+  const searchDebounce = debounce((searchStr) => {
+    searchFunc(searchStr);
+  }, 1000); //функция обертка для дебаунс
+
   const renderFunc = (items) => {
     wrapper.innerHTML = "";
     items.forEach((item) => {
@@ -18,7 +33,6 @@ const modal = () => {
       `
       );
     });
-    console.log(wrapper);
   };
 
   const searchFunc = (searchStr) => {
@@ -49,7 +63,7 @@ const modal = () => {
     //modal.style.display = "none";
   });
   searchInput.addEventListener("input", (event) => {
-    searchFunc(event.target.value);
+    searchDebounce(event.target.value);
   });
 };
 
