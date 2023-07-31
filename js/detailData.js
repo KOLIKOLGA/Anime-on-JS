@@ -34,7 +34,7 @@ const detailData = () => {
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="btn__all">
-            <a href="/categories.html?ganre=${ganre}" class="primary-btn">View All <span class="arrow_right"></span></a>
+            <a href="./categories.html?ganre=${ganre}" class="primary-btn">View All <span class="arrow_right"></span></a>
         </div>
     </div>
     </div>
@@ -96,7 +96,7 @@ const detailData = () => {
       );
     });
     wrapper.querySelectorAll(".set-bg").forEach((elem) => {
-      elem.style.backgroundImage = `url(${elem.dataset.setbg})`; //буз использ переменной src
+      elem.style.backgroundImage = `url(${elem.dataset.setbg})`; //без использ переменной src
     });
   };
 
